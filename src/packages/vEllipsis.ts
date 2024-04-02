@@ -11,7 +11,6 @@ export type EllipsisDirectiveBinding = DirectiveBinding<EllipsisDirectiveValue>
 const bind = (el: HTMLElement, binding: EllipsisDirectiveValue): void => {
   const textContent = binding.text || el.textContent || ""
   const { poperOptions, ...reset } = binding
-  console.log(reset, "reset", defaultOptions)
   const options = { ...defaultOptions, ...reset }
   calcEllipsisFullAndText(el, textContent, options, poperOptions)
 }

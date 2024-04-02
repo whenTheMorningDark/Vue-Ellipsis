@@ -87,7 +87,6 @@ const useEllipsis = (target: MaybeElementRef, options?: IOptions, poperOptions?:
     if (!el || !(el.parentNode instanceof HTMLElement)) return
 
     options = { ...defaultOptions, ...options }
-    console.log(options, "optionszzzzzzz")
 
     const textContent = options?.text || el.textContent || ""
     fullText.value = textContent

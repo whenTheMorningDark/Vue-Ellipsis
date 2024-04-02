@@ -125,7 +125,6 @@ export const calcEllipsisFullAndText = (
   const { text, ellipsis } = getEllipsisText(parentNode, fullText, maxHeight)
   el.innerHTML = text
   el.className = [options?.disabled ? "is-disabled" : "", "kl-trigger"].join(" ")
-  console.log(options, "options")
   if (ellipsis) {
     requestAnimationFrame(() => {
       if (!options?.showTooltip) {

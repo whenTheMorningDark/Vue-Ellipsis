@@ -4,7 +4,13 @@
       <span ref="targetRef" v-ellipsis="{ rows: 1, text: options.text }" />
     </div>
     <div class="wrapper" :style="{ width: `${width}px` }">
-      <Ellipsis :rows="1" :text="options.text" />
+      <Ellipsis
+        :rows="1"
+        :text="options.text"
+        :poperOptions="{
+          effect: 'light'
+        }"
+      />
     </div>
     <div class="wrapper" :style="{ width: `${width}px` }" ref="wrapperRef">
       <span ref="targetRef" />
