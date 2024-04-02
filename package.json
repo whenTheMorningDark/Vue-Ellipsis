@@ -1,7 +1,11 @@
 {
-  "name": "vue-ellipsis",
+  "name": "vue-ellipsis-tooltip",
   "version": "1.0.0",
   "description": "处理vue3中文本超长显示提示框",
+  "main": "dist/vEllipsis.js",
+  "files": [
+    "dist"
+  ],
   "author": {
     "name": "kafei",
     "email": "404792402@qq.com"

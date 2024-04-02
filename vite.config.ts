@@ -1,10 +1,8 @@
-import { defineConfig, PluginOption } from "vite"
+import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-import css from "rollup-plugin-css-only" // 引入插件
 export default defineConfig({
-  plugins: [vue(), css() as PluginOption],
+  plugins: [vue()],
   build: {
-    sourcemap: true, // 启用源代码映射
     lib: {
       entry: "./src/packages/index.ts",
       name: "vEllipsis",
@@ -16,7 +14,8 @@ export default defineConfig({
         globals: {
           vue: "Vue"
         },
-        entryFileNames: `vEllipsis.js`
+        entryFileNames: `vEllipsis.js`,
+        assetFileNames: "[name].[ext]" // 资源文件像 字体，图片等
       }
     }
   }
