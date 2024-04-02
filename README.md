@@ -11,7 +11,12 @@ npm install vue3-Ellipsis --save
 ```vue
 <template>
   <div class="wrapper" :style="{ width: `${width}px` }">
-    <Ellipsis :rows="options.rows" :text="options.text" />
+    <Ellipsis
+      :rows="options.rows"
+      :text="options.text"
+      :poperOptions="{
+          effect: 'light'
+        }"/>
   </div>
 </template>
 
