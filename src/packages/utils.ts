@@ -1,6 +1,7 @@
 import { useEventListener } from "@vueuse/core"
 import { createEllipsisPopper } from "./createEllipsisPopper"
 import { type ExtendedOptions } from "./createEllipsisPopper"
+// import { merge } from "lodash-es"
 type InitElementDomReturn = {
   el: HTMLElement | Element
   parentNode: HTMLElement
@@ -11,7 +12,11 @@ export interface IOptions {
   showTooltip?: boolean
   text?: string
   disabled?: boolean
-  isDirective?: boolean
+}
+export const defaultOptions = {
+  rows: 1,
+  showTooltip: true,
+  disabled: false
 }
 function pxToNumber(value: string | null): number {
   if (!value) return 0
@@ -109,7 +114,7 @@ const enterEventArr: any[] = []
 export const calcEllipsisFullAndText = (
   element: HTMLElement,
   fullText: string,
-  options?: IOptions,
+  options: IOptions = {},
   poperOptions?: ExtendedOptions
 ) => {
   const elementDom = initElementDom(options?.rows, element)
@@ -120,8 +125,12 @@ export const calcEllipsisFullAndText = (
   const { text, ellipsis } = getEllipsisText(parentNode, fullText, maxHeight)
   el.innerHTML = text
   el.className = [options?.disabled ? "is-disabled" : "", "kl-trigger"].join(" ")
+  console.log(options, "options")
   if (ellipsis) {
     requestAnimationFrame(() => {
+      if (!options?.showTooltip) {
+        return
+      }
       enterEvent = useEventListener(el, "mouseenter", () => {
         createEllipsisPopper(parentNode, el, fullText, poperOptions)
       })

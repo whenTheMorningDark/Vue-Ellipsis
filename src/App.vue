@@ -6,7 +6,7 @@
     <div class="wrapper" :style="{ width: `${width}px` }">
       <Ellipsis :rows="1" :text="options.text" />
     </div>
-    <div class="wrapper" :style="{ width: `${width}px` }" id="qaq" ref="wrapperRef">
+    <div class="wrapper" :style="{ width: `${width}px` }" ref="wrapperRef">
       <span ref="targetRef" />
     </div>
 
@@ -24,7 +24,7 @@ import Ellipsis from "./components/Ellipsis.vue"
 const targetRef = ref()
 const wrapperRef = ref()
 const options = ref({
-  rows: 5,
+  rows: 1,
   text: "你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好"
 })
 

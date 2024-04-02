@@ -1,6 +1,6 @@
 import { type IOptions } from "./utils"
 import { type Directive, type DirectiveBinding } from "vue"
-import { calcEllipsisFullAndText } from "./utils"
+import { calcEllipsisFullAndText, defaultOptions } from "./utils"
 import { type ExtendedOptions } from "./createEllipsisPopper"
 // 定义指令绑定的值类型
 export type EllipsisDirectiveValue = IOptions & {
@@ -11,8 +11,9 @@ export type EllipsisDirectiveBinding = DirectiveBinding<EllipsisDirectiveValue>
 const bind = (el: HTMLElement, binding: EllipsisDirectiveValue): void => {
   const textContent = binding.text || el.textContent || ""
   const { poperOptions, ...reset } = binding
-  calcEllipsisFullAndText(el, textContent, reset, poperOptions)
-  console.log("bind", el, textContent, reset, poperOptions)
+  console.log(reset, "reset", defaultOptions)
+  const options = { ...defaultOptions, ...reset }
+  calcEllipsisFullAndText(el, textContent, options, poperOptions)
 }
 
 const rebind = (el: HTMLElement, bindingValue: EllipsisDirectiveValue): void => {

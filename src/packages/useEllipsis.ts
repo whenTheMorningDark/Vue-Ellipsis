@@ -2,7 +2,7 @@ import type { ComponentPublicInstance, MaybeRef } from "vue"
 import { onMounted, nextTick, unref, watch, ref, getCurrentInstance } from "vue"
 import { useResizeObserver } from "@vueuse/core"
 import { type ExtendedOptions } from "./createEllipsisPopper"
-import { calcEllipsisFullAndText } from "./utils"
+import { calcEllipsisFullAndText, defaultOptions } from "./utils"
 import { type IOptions } from "./utils"
 export type MaybeRefOrGetter<T> = MaybeRef<T> | (() => T)
 export type MaybeElement = HTMLElement | Element | ComponentPublicInstance | undefined | null
@@ -85,6 +85,10 @@ const useEllipsis = (target: MaybeElementRef, options?: IOptions, poperOptions?:
   tryOnMounted(() => {
     const el = unrefElement(target)
     if (!el || !(el.parentNode instanceof HTMLElement)) return
+
+    options = { ...defaultOptions, ...options }
+    console.log(options, "optionszzzzzzz")
+
     const textContent = options?.text || el.textContent || ""
     fullText.value = textContent
     calcEllipsisFullAndText(el as HTMLElement, textContent, options, poperOptions)

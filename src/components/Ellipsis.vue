@@ -9,7 +9,9 @@ defineOptions({
   // 命名当前组件
   name: "kEllipsis"
 })
-const props = defineProps<IOptions>()
+const props = withDefaults(defineProps<IOptions>(), {
+  showTooltip: true
+})
 const targetRef = ref()
 useEllipsis(targetRef, props)
 </script>
