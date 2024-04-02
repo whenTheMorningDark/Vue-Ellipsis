@@ -8,6 +8,48 @@ npm install vue3-Ellipsis --save
 
 ## Usage
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .wrapper{
+        margin: 0 auto;
+      }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.cjs.prod.min.js"></script>
+    <script src="./vEllipsis.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="wrapper" :style="{ width: '200px' }">
+          <span  v-ellipsis="{ rows: 1, text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzz' }" />
+        </div>
+        <div class="wrapper" :style="{ width: `200px` }">
+          <k-ellipsis :rows="3" text=" A design is a plan or specification for the" />
+        </div>
+    </div>
+    <script>
+        const App = {
+          data() {
+            return {
+              message: "Hello Element Plus",
+            };
+          },
+        };
+        const app = Vue.createApp(App);
+        app.use(vEllipsis);
+        app.mount("#app");
+      </script>
+</body>
+</html>
+```
+
 ```vue
 <template>
   <div class="wrapper" :style="{ width: `${width}px` }">
@@ -70,6 +112,7 @@ useEllipsis(targetRef, options.value, {
 })
 </script>
 ```
+
 ### Attributes
 
 | 名称          | 说明                                 | 类型                            | 默认值   |
@@ -78,7 +121,6 @@ useEllipsis(targetRef, options.value, {
 | showTooltip      | 配置省略时的弹出框 | `boolean`                      | false  |
 | text     | 显示的内容        | `string`                      | ''    |
 | disabled | 是否禁用     | `boolean`                     | false
-
 
 ### poperOptions（弹出窗属性）
 
