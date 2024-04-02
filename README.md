@@ -3,7 +3,7 @@
 > 基于 Vue3 的超出宽度显示省略号和tooltips提示框
 
 ```bash
-npm install vue3-Ellipsis --save
+npm install vue-ellipsis-tooltip --save
 ```
 
 ## Usage
