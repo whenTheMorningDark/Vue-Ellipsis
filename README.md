@@ -113,6 +113,20 @@ useEllipsis(targetRef, options.value, {
 </script>
 ```
 
+## Usage（在脚手架中使用）
+
+main.ts
+```js
+import { createApp } from 'vue'
+import "vue-ellipsis-tooltip/dist/style.css"
+import vEllipsisPlugin from "vue-ellipsis-tooltip/dist/vEllipsis"
+import App from './App.vue'
+const app = createApp(App)
+app.use(vEllipsisPlugin)
+app.mount('#app')
+```
+
+
 ### Attributes
 
 | 名称          | 说明                                 | 类型                            | 默认值   |
