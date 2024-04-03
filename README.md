@@ -2,9 +2,14 @@
 
 > 基于 Vue3 的超出宽度显示省略号和tooltips提示框
 
+## Install
+
 ```bash
 npm install vue-ellipsis-tooltip --save
 ```
+
+## Preview
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4d66b067445468fb025cbbdd1c9e3e2~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=496&h=187&s=14935&e=png&b=ffffff)
 
 ## Usage
 [例子](https://github.com/whenTheMorningDark/Vue-Ellipsis/blob/main/src/App.vue)
