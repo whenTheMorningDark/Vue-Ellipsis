@@ -10,7 +10,7 @@ const install = (app: App): void => {
 }
 const vEllipsisPlugin = {
   install,
-  version: "1.0.0"
+  version
 }
 export { vEllipsis, install, version, useEllipsis }
 export default vEllipsisPlugin

@@ -1,7 +1,7 @@
 import { type IOptions } from "./utils"
 import { type Directive, type DirectiveBinding } from "vue"
 import { calcEllipsisFullAndText, defaultOptions } from "./utils"
-import { type ExtendedOptions } from "./createEllipsisPopper"
+import { ExtendedOptions } from "../types/index"
 // 定义指令绑定的值类型
 export type EllipsisDirectiveValue = IOptions & {
   poperOptions?: ExtendedOptions

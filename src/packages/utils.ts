@@ -1,18 +1,12 @@
 import { useEventListener } from "@vueuse/core"
 import { createEllipsisPopper } from "./createEllipsisPopper"
-import { type ExtendedOptions } from "./createEllipsisPopper"
-// import { merge } from "lodash-es"
+import { IOptions as TIOptions, ExtendedOptions } from "../types/index"
 type InitElementDomReturn = {
   el: HTMLElement | Element
   parentNode: HTMLElement
   maxHeight: number
 } | null
-export interface IOptions {
-  rows?: number
-  showTooltip?: boolean
-  text?: string
-  disabled?: boolean
-}
+export type IOptions = TIOptions
 export const defaultOptions = {
   rows: 1,
   showTooltip: true,

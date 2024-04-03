@@ -5,7 +5,8 @@
 import { ref } from "vue"
 import { useEllipsis } from "../packages/useEllipsis"
 import { IOptions } from "../packages/utils"
-import { ExtendedOptions } from "../packages/createEllipsisPopper"
+import { ExtendedOptions } from "../types/index"
+// import { ExtendedOptions } from "../packages/createEllipsisPopper"
 type EllipsisProps = IOptions & {
   poperOptions?: ExtendedOptions
 }

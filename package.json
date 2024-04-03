@@ -1,8 +1,9 @@
 {
   "name": "vue-ellipsis-tooltip",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "处理vue3中文本超长显示提示框",
   "main": "dist/vEllipsis.js",
+  "types": "dist/src/packages/index.d.ts",
   "files": [
     "dist"
   ],
@@ -15,7 +16,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build"
+    "build": "vue-tsc && vite build",
+    "postbuild": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",

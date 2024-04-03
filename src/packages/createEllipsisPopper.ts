@@ -1,45 +1,12 @@
 import { createPopper } from "@popperjs/core"
 import type { Instance as PopperInstance } from "@popperjs/core"
-import type { Options } from "@popperjs/core"
 import { useDelayedToggle } from "./useDelayedToggle"
+import { ExtendedOptions } from "../types/index"
 import { merge } from "lodash-es"
 import { ref } from "vue"
-const effects = ["light", "dark"] as const
 
 const prefix = "kl"
 
-export type PopperEffect = (typeof effects)[number]
-
-const placements = [
-  "top",
-  "top-start",
-  "top-end",
-  "bottom",
-  "bottom-start",
-  "bottom-end",
-  "left",
-  "left-start",
-  "left-end",
-  "right",
-  "right-start",
-  "right-end"
-] as const
-
-export type placementEmnu = (typeof placements)[number]
-
-// 定义扩展的 Options 类型
-export type ExtendedOptions = Partial<Options> & {
-  effect?: PopperEffect // 作为可选属性
-  teleported?: boolean // 作为可选属性
-  showArrow?: boolean // 作为可选属性
-  popperClass?: string // 作为可选属性
-  offset?: number // 作为可选属性
-  showAfter?: number // 作为可选属性
-  hideAfter?: number // 作为可选属性
-  placement?: placementEmnu
-  zIndex?: number
-  popperOptions?: Options // 作为可选属性
-}
 export let removePopper: any
 export const createEllipsisPopper = (
   parentNode: HTMLElement | undefined,

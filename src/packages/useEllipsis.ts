@@ -1,7 +1,7 @@
 import type { ComponentPublicInstance, MaybeRef } from "vue"
 import { onMounted, nextTick, unref, watch, ref, getCurrentInstance } from "vue"
 import { useResizeObserver } from "@vueuse/core"
-import { type ExtendedOptions } from "./createEllipsisPopper"
+import { type ExtendedOptions } from "../types/index"
 import { calcEllipsisFullAndText, defaultOptions } from "./utils"
 import { type IOptions } from "./utils"
 export type MaybeRefOrGetter<T> = MaybeRef<T> | (() => T)
