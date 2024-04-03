@@ -6,7 +6,7 @@
     <div class="wrapper" :style="{ width: `${width}px` }">
       <Ellipsis
         :rows="1"
-        :text="options.text"
+        :text="text"
         :poperOptions="{
           effect: 'light'
         }"
@@ -16,11 +16,11 @@
       <span ref="targetRef" />
     </div>
 
-    <el-button @click="change">按钮</el-button>
-    <el-button @click="change1">文字</el-button>
-    <el-button @click="change2">宽度</el-button>
-    <el-button @click="change3">宽度3</el-button>
-    <el-button @click="change4">宽度4</el-button>
+    <button @click="change">按钮</button>
+    <button @click="change1">文字</button>
+    <button @click="change2">宽度</button>
+    <button @click="change3">宽度3</button>
+    <button @click="change4">宽度4</button>
   </div>
 </template>
 <script setup lang="ts">
@@ -33,6 +33,7 @@ const options = ref({
   rows: 1,
   text: "你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好"
 })
+const text = ref("啊大苏打实打实大苏打实打实大苏打实打实士大夫士大夫士大夫士大夫士大夫胜多负少")
 
 const width = ref(200)
 useEllipsis(targetRef, options.value, {
