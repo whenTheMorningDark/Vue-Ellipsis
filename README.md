@@ -39,7 +39,7 @@ npm install vue-ellipsis-tooltip --save
           <span  v-ellipsis="{ rows: 1, text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzz' }" />
         </div>
         <div class="wrapper" :style="{ width: `200px` }">
-          <k-ellipsis :rows="3" text=" A design is a plan or specification for the" />
+          <vue-ellipsis-tooltip :rows="3" text=" A design is a plan or specification for the" />
         </div>
     </div>
     <script>
