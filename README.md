@@ -7,6 +7,8 @@
 ```bash
 npm install vue-ellipsis-tooltip --save
 ```
+## Attention
+使用该组件时，需要注意父容器有宽度或者最大最小宽度，否则无法生效！
 
 ## Preview
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4d66b067445468fb025cbbdd1c9e3e2~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=496&h=187&s=14935&e=png&b=ffffff)
