@@ -7,6 +7,7 @@ npm install vue-ellipsis-tooltip --save
 ```
 
 ## Usage
+[例子](https://github.com/whenTheMorningDark/Vue-Ellipsis/blob/main/src/App.vue)
 
 ```html
 <!DOCTYPE html>
