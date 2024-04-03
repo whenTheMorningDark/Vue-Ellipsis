@@ -57,6 +57,7 @@ npm install vue-ellipsis-tooltip --save
 </body>
 </html>
 ```
+## 组件形式
 
 ```vue
 <template>
@@ -81,6 +82,7 @@ const options = ref({
 const width = ref(200)
 </script>
 ```
+## 指令形式
 
 ```vue
 <template>
@@ -99,6 +101,7 @@ const options = ref({
 const width = ref(200)
 </script>
 ```
+## hook形式
 
 ```vue
 <template>
@@ -108,6 +111,7 @@ const width = ref(200)
 </template>
 
 <script setup lang="ts">
+import { useEllipsis } from "vue-ellipsis-tooltip"
 import { ref } from "vue"
 const targetRef = ref()
 const width = ref(200)
