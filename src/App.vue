@@ -4,7 +4,7 @@
       <span ref="targetRef" v-ellipsis="{ rows: 1, text: options.text }" />
     </div>
     <div class="wrapper" :style="{ width: `${width}px` }">
-      <k-ellipsis
+      <kEllipsis
         :rows="1"
         :text="text"
         :poperOptions="{
