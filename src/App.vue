@@ -4,7 +4,7 @@
       <span ref="targetRef" v-ellipsis="{ rows: 1, text: options.text }" />
     </div>
     <div class="wrapper" :style="{ width: `${width}px` }">
-      <Ellipsis
+      <k-ellipsis
         :rows="1"
         :text="text"
         :poperOptions="{
@@ -26,7 +26,6 @@
 <script setup lang="ts">
 import { useEllipsis } from "../src/packages/useEllipsis"
 import { ref } from "vue"
-import Ellipsis from "./components/Ellipsis.vue"
 const targetRef = ref()
 const wrapperRef = ref()
 const options = ref({

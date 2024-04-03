@@ -12,5 +12,5 @@ const vEllipsisPlugin = {
   install,
   version
 }
-export { vEllipsis, install, version, useEllipsis }
+export { vEllipsis, install, version, useEllipsis, Ellipsis }
 export default vEllipsisPlugin
