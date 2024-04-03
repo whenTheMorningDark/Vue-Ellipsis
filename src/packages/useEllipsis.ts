@@ -4,6 +4,7 @@ import { useResizeObserver } from "@vueuse/core"
 import { type ExtendedOptions } from "../types/index"
 import { calcEllipsisFullAndText, defaultOptions } from "./utils"
 import { type IOptions } from "./utils"
+import { isUndefined } from "lodash-es"
 export type MaybeRefOrGetter<T> = MaybeRef<T> | (() => T)
 export type MaybeElement = HTMLElement | Element | ComponentPublicInstance | undefined | null
 export type MaybeElementRef<T extends MaybeElement = MaybeElement> = MaybeRef<T>
@@ -53,11 +54,13 @@ const useEllipsis = (target: MaybeElementRef, options?: IOptions, poperOptions?:
 
   watch(
     () => options?.text,
-    async (nVal) => {
+    (nVal) => {
+      console.log(nVal, "nVal")
       const newOptions = {
         text: nVal || "",
         ...options
       }
+
       if (fullText.value === nVal) {
         return
       }
@@ -85,8 +88,17 @@ const useEllipsis = (target: MaybeElementRef, options?: IOptions, poperOptions?:
   tryOnMounted(() => {
     const el = unrefElement(target)
     if (!el || !(el.parentNode instanceof HTMLElement)) return
-
-    options = { ...defaultOptions, ...options }
+    if (!isUndefined(options)) {
+      if (isUndefined(options.showTooltip)) {
+        options.showTooltip = defaultOptions.showTooltip
+      }
+      if (isUndefined(options.rows)) {
+        options.rows = 1
+      }
+      if (isUndefined(options.disabled)) {
+        options.disabled = false
+      }
+    }
 
     const textContent = options?.text || el.textContent || ""
     fullText.value = textContent
