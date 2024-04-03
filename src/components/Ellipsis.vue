@@ -11,7 +11,7 @@ type EllipsisProps = IOptions & {
 }
 defineOptions({
   // 命名当前组件
-  name: "kEllipsis"
+  name: "vueEllipsisTooltip"
 })
 const props = withDefaults(defineProps<EllipsisProps>(), {
   showTooltip: true

@@ -12,6 +12,6 @@ const vEllipsisPlugin = {
   install,
   version
 }
-const kEllipsis = Ellipsis
-export { vEllipsis, install, version, useEllipsis, kEllipsis }
+const vueEllipsisTooltip = Ellipsis
+export { vEllipsis, install, version, useEllipsis, vueEllipsisTooltip }
 export default vEllipsisPlugin
