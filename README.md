@@ -61,7 +61,7 @@ npm install vue-ellipsis-tooltip --save
 ```vue
 <template>
   <div class="wrapper" :style="{ width: `${width}px` }">
-    <kEllipsis
+    <vue-ellipsis-tooltip
       :rows="options.rows"
       :text="options.text"
       :poperOptions="{
@@ -72,7 +72,7 @@ npm install vue-ellipsis-tooltip --save
 
 <script setup lang="ts">
 import { ref } from "vue"
-import {kEllipsis} from "vue-ellipsis-tooltip"
+import {vue-ellipsis-tooltip} from "vue-ellipsis-tooltip"
 const options = ref({
   rows: 1,
   text: "你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好"
